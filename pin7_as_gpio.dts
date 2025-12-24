@@ -6,7 +6,6 @@
     overlay-name = "Pin 7 gpio bidirectional";
     compatible = "nvidia,p3768-0000+p3767-0000\0nvidia,p3768-0000+p3767-0001\0nvidia,p3768-0000+p3767-0003\0nvidia,p3768-0000+p3767-0004\0nvidia,p3768-0000+p3767-0005\0nvidia,p3768-0000+p3767-0000-super\0nvidia,p3768-0000+p3767-0001-super\0nvidia,p3768-0000+p3767-0003-super\0nvidia,p3768-0000+p3767-0004-super\0nvidia,p3768-0000+p3767-0005-super\0nvidia,p3509-0000+p3767-0000\0nvidia,p3509-0000+p3767-0001\0nvidia,p3509-0000+p3767-0003\0nvidia,p3509-0000+p3767-0004\0nvidia,p3509-0000+p3767-0005";
 
-
     fragment@0 {
         target = <&pinmux>;
 
@@ -15,13 +14,51 @@
             pinctrl-0 = <&jetson_io_pinmux>;
             
             jetson_io_pinmux: exp-header-pinmux {
-		    hdr40-pin7 {
-		        nvidia,pins = "soc_gpio59_pac6";
-		        nvidia,tristate = <0x0>;
-		        nvidia,enable-input = <0x1>;
-		        nvidia,pull = <0x0>;
-		    };
-	     };
+                hdr40-pin7 {
+                    nvidia,pins = "soc_gpio59_pac6";
+                    nvidia,enable-input = <0>;
+                    nvidia,tristate = <0>;
+                    nvidia,pull = <0>;
+                };
+
+                hdr40-pin12 {
+                    nvidia,pins = "soc_gpio41_ph7";
+                    nvidia,enable-input = <0>;
+                    nvidia,tristate = <0>;
+                    nvidia,pull = <0>;
+                };
+
+                hdr40-pin15 {
+                    nvidia,pins = "soc_gpio39_pn1";
+                    nvidia,enable-input = <0>;
+                    nvidia,tristate = <0>;
+                    nvidia,pull = <0>;
+                };
+                    hdr40-pin29 {
+                    nvidia,pins = "soc_gpio32_pq5";
+                    nvidia,enable-input = <0>;
+                    nvidia,tristate = <0>;
+                    nvidia,pull = <0>;
+                };
+
+                hdr40-pin32 {
+                    nvidia,pins = "soc_gpio19_pg6";
+                    nvidia,function = "gp";
+                    nvidia,pin-group = "pwm7";
+                    nvidia,tristate = <0x0>;
+                    nvidia,enable-input = <0x0>;
+                };
+
+                hdr40-pin33 {
+                    nvidia,pins = "soc_gpio21_ph0";
+                    nvidia,function = "gp";
+                    nvidia,pin-group = "pwm5";
+                    nvidia,tristate = <0x0>;
+                    nvidia,enable-input = <0x0>;
+                };
+            };
         };
     };
 };
+
+

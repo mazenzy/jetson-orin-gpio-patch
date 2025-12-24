@@ -1,0 +1,26 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+    compatible = "nvidia,jetson-orin-nano";
+
+    fragment@0 {
+        target = <&gpio>;
+        __overlay__ {
+            gpio_output {
+                nvidia,function = "gpio";
+                nvidia,pins = "gpio3_PBB.00", // Pin 7
+                               "gpio0_PAA.02", // Pin 11
+                               "gpio3_PCC.01", // Pin 13
+                               "gpio3_PBB.03", // Pin 15
+                               "gpio4_PN.04",  // Pin 18
+                               "gpio4_PZ.04",  // Pin 19
+                               "gpio4_PZ.05",  // Pin 21
+                               "gpio4_PZ.06";  // Pin 23
+                nvidia,pull = <0>;
+                nvidia,tristate = <0>;
+                nvidia,enable-input = <0>;
+            };
+        };
+    };
+};
