@@ -2,7 +2,9 @@
 /plugin/;
 
 / {
-    compatible = "nvidia,jetson-orin-nano";
+    compatible = "nvidia,p3768-0000+p3767-0003-super",
+                 "nvidia,p3767-0003",
+                 "nvidia,jetson-orin-nano";
 
     fragment@0 {
         target = <&gpio>;

@@ -1,0 +1,24 @@
+/dts-v1/;
+
+/ {
+	compatible = "nvidia,p3768-0000+p3767-0003-super\0nvidia,p3767-0003\0nvidia,jetson-orin-nano";
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			gpio_output {
+				nvidia,function = "gpio";
+				nvidia,pins = "gpio3_PBB.00\0gpio0_PAA.02\0gpio3_PCC.01\0gpio3_PBB.03\0gpio4_PN.04\0gpio4_PZ.04\0gpio4_PZ.05\0gpio4_PZ.06";
+				nvidia,pull = <0x00>;
+				nvidia,tristate = <0x00>;
+				nvidia,enable-input = <0x00>;
+			};
+		};
+	};
+
+	__fixups__ {
+		gpio = "/fragment@0:target:0";
+	};
+};
