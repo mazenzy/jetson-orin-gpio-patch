@@ -23,7 +23,7 @@ import Jetson.GPIO as GPIO
 import time
 
 # Pin Definitions
-output_pin = 7,12,15,29  # Jetson Board Pin 7
+output_pin = 31,19,21  # Jetson Board Pin 31,19,21,27
 
 
 def main():
