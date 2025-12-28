@@ -23,7 +23,7 @@ import Jetson.GPIO as GPIO
 import time
 
 # Pin Definitions
-output_pin = 7  # Jetson Board Pin 7
+output_pin = 31,19,21  # Jetson Board Pin 31,19,21,27
 
 
 def main():
@@ -36,7 +36,7 @@ def main():
     curr_value = GPIO.HIGH
     try:
         while True:
-            time.sleep(1)
+            time.sleep(2)
             # Toggle the output every second
             print("Outputting {} to pin {}".format(curr_value, output_pin))
             GPIO.output(output_pin, curr_value)
